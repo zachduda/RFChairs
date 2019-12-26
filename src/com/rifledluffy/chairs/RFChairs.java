@@ -9,7 +9,6 @@ import com.rifledluffy.chairs.chairs.BlockFilter;
 import com.rifledluffy.chairs.command.CommandManager;
 import com.rifledluffy.chairs.config.ConfigManager;
 import com.rifledluffy.chairs.managers.WorldGuardManager;
-import com.rifledluffy.chairs.metrics.MetricsLite;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -45,11 +44,7 @@ public class RFChairs extends JavaPlugin {
 	}
 	
 	@Override
-	public void onEnable() {
-		
-		@SuppressWarnings("unused")
-		MetricsLite metrics = new MetricsLite(this);
-		
+	public void onEnable() {		
         commandManager = new CommandManager();
         commandManager.setup();
         
@@ -66,9 +61,7 @@ public class RFChairs extends JavaPlugin {
 		chairManager.reload(this);
 		messageManager.reload(this);
 		getServer().getPluginManager().registerEvents(chairManager, this);
-		getServer().getPluginManager().registerEvents(messageManager, this);
-		
-		getLogger().info("Rifle's Chairs has been enabled!");		
+		getServer().getPluginManager().registerEvents(messageManager, this);		
 	}
 	
 	@Override
@@ -82,12 +75,10 @@ public class RFChairs extends JavaPlugin {
 		cfgManager.saveData();
 
 		Bukkit.getOnlinePlayers().forEach(p -> {
-					PotionEffect regen = p.getPotionEffect(PotionEffectType.REGENERATION);
-					if (regen == null) return;
-					if (regen.getDuration() > 1000) p.removePotionEffect(PotionEffectType.REGENERATION);
-				});
-		
-		getLogger().info("Rifle's Chairs has been disabled!");
+		    PotionEffect regen = p.getPotionEffect(PotionEffectType.REGENERATION);
+		    if (regen == null) return;
+			if (regen.getDuration() > 1000) p.removePotionEffect(PotionEffectType.REGENERATION);
+		});
 	}
 	
 	public void loadConfigManager() {

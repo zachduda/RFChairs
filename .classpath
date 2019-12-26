@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Zach/Desktop/BuildTools/spigot-1.15.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Zach/eclipse-workspace/GriefPrevention.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Zach/eclipse-workspace/PlotSquared-Bukkit-4.435.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Zach/eclipse-workspace/worldedit-bukkit-7.1.0-SNAPSHOT-dist.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Zach/eclipse-workspace/worldguard-bukkit-7.0.2-SNAPSHOT-dist.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

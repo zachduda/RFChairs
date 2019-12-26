@@ -9,8 +9,6 @@ import org.bukkit.entity.Player;
 
 import com.rifledluffy.chairs.MessageManager;
 import com.rifledluffy.chairs.RFChairs;
-import com.rifledluffy.chairs.messages.MessageEvent;
-import com.rifledluffy.chairs.messages.MessageType;
 import com.rifledluffy.chairs.utility.Util;
 
 public class ToggleCommand extends SubCommand {

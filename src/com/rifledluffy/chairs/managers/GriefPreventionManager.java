@@ -4,9 +4,6 @@ import me.ryanhamshire.GriefPrevention.Claim;
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
 import org.bukkit.Location;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class GriefPreventionManager {
 
     private GriefPrevention instance;

@@ -36,7 +36,6 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.EquipmentSlot;
@@ -45,7 +44,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.projectiles.ProjectileSource;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 import org.spigotmc.event.entity.EntityDismountEvent;
 
@@ -74,10 +72,6 @@ public class ChairManager implements Listener {
 	
 	private PotionEffect regenEffect = new PotionEffect(PotionEffectType.REGENERATION, 655200, config.getInt("regen-potency", 0), false, false);
 	private boolean regenWhenSitting;
-	
-	//Update related
-	private boolean disableCurrentUpdate;
-	private boolean disableUpdates;
 	
 	//Kick them off their seat if they take damage
 	private boolean canLaunch;
@@ -116,9 +110,6 @@ public class ChairManager implements Listener {
 		
 		regenEffect = new PotionEffect(PotionEffectType.REGENERATION, 655200, config.getInt("regen-potency", 0), false, false);
 		regenWhenSitting = config.getBoolean("regen-when-sitting", true);
-		
-		disableCurrentUpdate = config.getBoolean("disable-update-message-if-on-latest", false);
-		disableUpdates = config.getBoolean("disable-update-messages", false);
 		
 		faceAttacker = config.getBoolean("face-attacker-when-ejected", false);
 		canToss = config.getBoolean("toss-player", false);
@@ -625,5 +616,4 @@ public class ChairManager implements Listener {
 			plugin.getServer().getLogger().info("[RFChairs] No fake seats remaining! Proceeding");
 		}
 	}
-
 }
