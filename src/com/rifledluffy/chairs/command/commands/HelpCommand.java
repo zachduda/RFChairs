@@ -5,8 +5,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 import com.rifledluffy.chairs.RFChairs;
-
-import net.md_5.bungee.api.ChatColor;
+import com.rifledluffy.chairs.messages.Messages;
 
 public class HelpCommand extends SubCommand {
 	
@@ -20,29 +19,25 @@ public class HelpCommand extends SubCommand {
 			onCommand((ConsoleCommandSender) sender, args);
 		} else return;
 	}
+	
+	private void helpCommands(CommandSender s) {
+    	Messages.send(s, "&e&l&m--------------&r&8&l( &e&lCHAIRS &8&l)&e&l&m--------------");
+    	Messages.send(s, "&f&l/chairs reload  &7Reloads the config and messages");
+    	Messages.send(s, "&f&l/chairs reset  &7Resets all chairs");
+    	Messages.send(s, "&f&l/chairs toggle  &7Disables seating on chairs for the executor");
+    	Messages.send(s, "&f&l/chairs mute  &7Mutes event messages from the plugin for the executor");
+    	Messages.send(s, "&f&l/chairs update  &7Runs a check on their current version");
+    	Messages.send(s, "&e&l&m------------------------------------------------");
+	}
     
     @Override
 	public void onCommand(ConsoleCommandSender sender, String[] args) {
-    	sender.sendMessage(ChatColor.YELLOW + "--------------" + ChatColor.DARK_GRAY + "[" + ChatColor.DARK_GREEN + "Available Commands" + ChatColor.DARK_GRAY + "]" + ChatColor.YELLOW + "--------------");
-    	sender.sendMessage(ChatColor.GOLD + "/rfc or /rfchairs" + ChatColor.GRAY + " is the main command");
-    	sender.sendMessage(ChatColor.GOLD + "/rfchairs reload" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Reloads the config and messages [Console Can Cast]");
-    	sender.sendMessage(ChatColor.GOLD + "/rfchairs reset" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Resets all chairs [Console Can Cast]");
-    	sender.sendMessage(ChatColor.GOLD + "/rfchairs toggle" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Disables seating on chairs for the executor [Player Only]");
-    	sender.sendMessage(ChatColor.GOLD + "/rfchairs mute" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Mutes event messages from the plugin for the executor [Player Only]");
-    	sender.sendMessage(ChatColor.GOLD + "/rfchairs update" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Runs a check on their current version [Console Can Cast]");
-    	sender.sendMessage(ChatColor.YELLOW + "------------------------------------------------");
+    	helpCommands(sender);
 	}
 	
     @Override
     public void onCommand(Player player, String[] args) {
-    	player.sendMessage(ChatColor.YELLOW + "--------------" + ChatColor.DARK_GRAY + "[" + ChatColor.DARK_GREEN + "Available Commands" + ChatColor.DARK_GRAY + "]" + ChatColor.YELLOW + "--------------");
-    	player.sendMessage(ChatColor.GOLD + "/rfc or /rfchairs" + ChatColor.GRAY + " is the main command");
-    	player.sendMessage(ChatColor.GOLD + "/rfchairs reload" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Reloads the config and messages");
-    	player.sendMessage(ChatColor.GOLD + "/rfchairs reset" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Resets all chairs");
-    	player.sendMessage(ChatColor.GOLD + "/rfchairs toggle" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Disables seating on chairs for the executor");
-    	player.sendMessage(ChatColor.GOLD + "/rfchairs mute" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Mutes event messages from the plugin for the executor");
-    	player.sendMessage(ChatColor.GOLD + "/rfchairs update" + ChatColor.DARK_GRAY + " | " + ChatColor.GRAY + "Runs a check on their current version");
-    	player.sendMessage(ChatColor.YELLOW + "------------------------------------------------");
+    	helpCommands(player);
     }
 
     @Override

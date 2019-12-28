@@ -1,5 +1,5 @@
-# Rifle's Chair plugin by Rifle D. Luffy
-# Version 6.0
+# Rifle's Chair plugin by Rifle D. Luffy; A fork by Zach.
+# Version 7.X
 # #=============[Seat Configuration]=============##
 # stair-seating-position: The exact positions of where the armorstand spawns on a stair; default 0.35,0.3,0.5
 # slab-seating-position: The exact positions of where the armorstand spawns on a slab; default 0.5,0.3,0.5

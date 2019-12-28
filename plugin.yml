@@ -1,6 +1,6 @@
 main: com.rifledluffy.chairs.RFChairs
 name: RFChairs
-version: 7.0
+version: 7.1
 authors: [Rifle D. Luffy, VicenteRD, carlpoole, i0xHeX, zach_attack]
 api-version: 1.15
 description: Chairs but Rifle's way.
@@ -9,7 +9,7 @@ commands:
   rfchairs:
     usage: /<command>
     description: The main prefix for other commands. Type /rfchairs help for more info
-    aliases: [rfc]
+    aliases: [rfc, chairs]
 permissions:
   rfchairs.use:
     description: Use of chairs

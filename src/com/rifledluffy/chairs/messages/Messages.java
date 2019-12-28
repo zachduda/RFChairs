@@ -1,5 +1,8 @@
 package com.rifledluffy.chairs.messages;
 
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+
 public class Messages {
 	
 	private final static String occupied = "occupied-seat";
@@ -88,5 +91,15 @@ public class Messages {
 			case PLOTSQUARED:
 				return Messages.plotSquared;
 		}
+	}
+	
+	// 
+	// Color translators also found the Utils.class, but only for players.
+	public static String format(String msg) {
+		return ChatColor.translateAlternateColorCodes('&', msg);
+	}
+	
+	public static void send(CommandSender sender, String msg) {
+		sender.sendMessage(format(msg));
 	}
 }
