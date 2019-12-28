@@ -21,13 +21,14 @@ public class HelpCommand extends SubCommand {
 	}
 	
 	private void helpCommands(CommandSender s) {
-    	Messages.send(s, "&e&l&m--------------&r&8&l( &e&lCHAIRS &8&l)&e&l&m--------------");
+		Messages.send(s, "&f");
+    	Messages.send(s, "&7&l&m--------------&r&8&l( &e&lCHAIRS &8&l)&7&l&m--------------");
     	Messages.send(s, "&f&l/chairs reload  &7Reloads the config and messages");
     	Messages.send(s, "&f&l/chairs reset  &7Resets all chairs");
     	Messages.send(s, "&f&l/chairs toggle  &7Disables seating on chairs for the executor");
     	Messages.send(s, "&f&l/chairs mute  &7Mutes event messages from the plugin for the executor");
     	Messages.send(s, "&f&l/chairs update  &7Runs a check on their current version");
-    	Messages.send(s, "&e&l&m------------------------------------------------");
+    	Messages.send(s, "&f");
 	}
     
     @Override

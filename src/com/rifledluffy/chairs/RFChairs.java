@@ -34,7 +34,7 @@ public class RFChairs extends JavaPlugin {
 			Class.forName("com.sk89q.worldedit.math.BlockVector3");
 			worldGuardManager = new WorldGuardManager();
 			worldGuardManager.setup();
-			getLogger().info("Found WorldGuard && WorldEdit! Applying Custom Flag...");
+			getLogger().info("Found WorldGuard & WorldEdit! Hooking...");
 		} catch (ClassNotFoundException e) {
 			getLogger().info("Missing either WorldGuard or WorldEdit! Disabling Custom Flag Features...");
 			getLogger().info("Latest WorldGuard/WorldEdit features could be missing. Please Update!");
